@@ -27,7 +27,7 @@ function LED1_Off(){
   client.onMessageArrived = onMessageArrived;
   var options = {
    useSSL: false,
-    userName: "maribel.agudelo@unach.edu.ec/",
+    userName: "maribel.agudelo@unach.edu.ec",
     password: "Saltarina1907981",
     onSuccess:onConnect,
     onFailure:doFail
