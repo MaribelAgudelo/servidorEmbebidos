@@ -6,7 +6,7 @@ function PRENDIDO() {
 	if (contador==0)
 	{
 	//alert("led on");
-	console.log("PRENDIDO");
+	console.log("ENCENDIDO");
 	//document.getElementById("sensor").innerHTML="led on";
 	message = new Paho.MQTT.Message("ENCENDER");
         message.destinationName = "maribel.agudelo@unach.edu.ec/tema2";
