@@ -19,7 +19,7 @@ function LED1_On() {
         //message = new Paho.MQTT.Message("OFF");
         //message.destinationName = "maribel.agudelo@unach.edu.ec/tema2";
         //client.send(message);
-}
+//}
 
 
 // Create a client instance
