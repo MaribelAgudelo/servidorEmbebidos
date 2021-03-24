@@ -3,6 +3,7 @@
 function PRENDIDO() {
 	
 	if (contador==0)
+	{
 	//alert("led on");
 	console.log("PRENDIDO");
 	//document.getElementById("sensor").innerHTML="led on";
