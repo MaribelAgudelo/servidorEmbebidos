@@ -4,9 +4,9 @@ function LED1_On() {
 	//alert("led on");
 	console.log("led on");
 	//document.getElementById("sensor").innerHTML="led on";
-	message = new Paho.MQTT.Message("Prendido");
+	message = new Paho.MQTT.Message("ON");
         message.destinationName = "maribel.agudelo@unach.edu.ec/tema2";
-	message = new Paho.MQTT.Message("Apagado");
+	message = new Paho.MQTT.Message("OFF");
         message.destinationName = "maribel.agudelo@unach.edu.ec/tema2";
         client.send(message);
 	
@@ -20,10 +20,6 @@ function LED1_On() {
         //message.destinationName = "maribel.agudelo@unach.edu.ec/tema2";
         //client.send(message);
 }
-
-
-
-
 
 
 // Create a client instance
