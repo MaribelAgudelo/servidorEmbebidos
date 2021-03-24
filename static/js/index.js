@@ -1,5 +1,6 @@
 //https://www.eclipse.org/paho/clients/js/
 
+var btn=document.getElementById('btn'), contador=0;
 function PRENDIDO() {
 	
 	if (contador==0)
