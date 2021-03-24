@@ -6,7 +6,7 @@ function PRENDIDO() {
 	if (contador==0)
 	{
 	//alert("led on");
-	console.log("ENCENDIDO");
+	//console.log("ENCENDIDO");
 	//document.getElementById("sensor").innerHTML="led on";
 	message = new Paho.MQTT.Message("ENCENDER");
         message.destinationName = "maribel.agudelo@unach.edu.ec/tema2";
@@ -37,8 +37,8 @@ function PRENDIDO() {
   client = new Paho.MQTT.Client("maqiatto.com", 8883, "web_" + parseInt(Math.random() * 100, 10));
 
   // set callback handlers
-  client.onConnectionLost = onConnectionLost;
-  client.onMessageArrived = onMessageArrived;
+  client.onConnectionLost = conexión_perdida;
+  client.onMessageArrived = mensaje_recibido;
   var options = {
    useSSL: false,
     userName: "maribel.agudelo@unach.edu.ec",
@@ -70,13 +70,13 @@ function PRENDIDO() {
   // called when the client loses its connection
   function onConnectionLost(responseObject) {
     if (responseObject.errorCode !== 0) {
-      console.log("onConnectionLost:"+responseObject.errorMessage);
+      console.log("conexion_perdida:"+responseObject.errorMessage);
     }
   }
 
   // called when a message arrives
   function onMessageArrived(message) {
-    console.log("onMessageArrived:"+message.payloadString);
+    console.log("mensaje_recibido:"+message.payloadString);
 	  document.getElementById("sensor").innerHTML= message.payloadString;
   }
   
