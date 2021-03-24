@@ -1,16 +1,23 @@
 //https://www.eclipse.org/paho/clients/js/
 
 function PRENDIDO() {
+	
+	if (contador==0)
 	//alert("led on");
 	console.log("PRENDIDO");
 	//document.getElementById("sensor").innerHTML="led on";
-	message = new Paho.MQTT.Message("PRENDIDO");
+	message = new Paho.MQTT.Message("ENCENDER");
         message.destinationName = "maribel.agudelo@unach.edu.ec/tema2";
+	client.send(message);
+	contador=1;
+        } 
+        else
+	{
 	message = new Paho.MQTT.Message("APAGADO");
         message.destinationName = "maribel.agudelo@unach.edu.ec/tema2";
         client.send(message);
-	
-  
+	contador=0
+	}
 }
 //function LED1_Off(){	
 	//alert("led off");
