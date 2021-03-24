@@ -1,6 +1,6 @@
 //https://www.eclipse.org/paho/clients/js/
 
-function LED1_On() {
+function PRENDIDO() {
 	//alert("led on");
 	console.log("PRENDIDO");
 	//document.getElementById("sensor").innerHTML="led on";
