@@ -2,11 +2,11 @@
 
 function LED1_On() {
 	//alert("led on");
-	console.log("led on");
+	console.log("PRENDIDO");
 	//document.getElementById("sensor").innerHTML="led on";
-	message = new Paho.MQTT.Message("ON");
+	message = new Paho.MQTT.Message("PRENDIDO");
         message.destinationName = "maribel.agudelo@unach.edu.ec/tema2";
-	message = new Paho.MQTT.Message("OFF");
+	message = new Paho.MQTT.Message("APAGADO");
         message.destinationName = "maribel.agudelo@unach.edu.ec/tema2";
         client.send(message);
 	
