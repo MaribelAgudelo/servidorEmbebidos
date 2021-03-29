@@ -9,14 +9,14 @@ function PRENDIDO() {
 	//console.log("ENCENDIDO");
 	//document.getElementById("sensor").innerHTML="led on";
 	message = new Paho.MQTT.Message("ENCENDER");
-        message.destinationName = "maribel.agudelo@unach.edu.ec/tema1";
+        message.destinationName = "maribel.agudelo@unach.edu.ec/tema2";
 	client.send(message);
 	contador=1;
         } 
         else
 	{
 	message = new Paho.MQTT.Message("APAGADO");
-        message.destinationName = "maribel.agudelo@unach.edu.ec/tema1";
+        message.destinationName = "maribel.agudelo@unach.edu.ec/tema2";
         client.send(message);
 	contador=0
 	}
