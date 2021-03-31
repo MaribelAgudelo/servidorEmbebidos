@@ -47,7 +47,7 @@ function PRENDIDO() {
 
 
 
-function
+//function
 //function LED1_Off(){	
 	//alert("led off");
 	//console.log("led off");
