@@ -1,16 +1,16 @@
 //https://www.eclipse.org/paho/clients/js/
 
 //var btn=document.getElementById('btn'), contador=0;
-function Boton() {
+//function Boton() {
 	
 //	if (contador==0)
 //	{
 //	//alert("led on");
 	//console.log("ENCENDIDO");
-	document.getElementById("sensor").innerHTML="BOTON";
-	message = new Paho.MQTT.Message("VALORES");
-        message.destinationName = "maribel.agudelo@unach.edu.ec/tema1";
-	client.send(message);
+//	document.getElementById("sensor").innerHTML="BOTON";
+//	message = new Paho.MQTT.Message("VALORES");
+//       message.destinationName = "maribel.agudelo@unach.edu.ec/tema1";
+//	client.send(message);
 //	contador=1;
 //        } 
 //        else
@@ -24,26 +24,26 @@ function Boton() {
 
 //BOTON ENCENCIDO Y APAGADO CON UN SOLO BOTON 
 //var btn=document.getElementById('btn'), contador=0;
-//function PRENDIDO() {
+function PRENDIDO() {
 	
-//	if (contador==0)
-//	{
-//	//alert("led on");
+	if (contador==0)
+	{
+	//alert("led on");
 	//console.log("ENCENDIDO");
-	//document.getElementById("sensor").innerHTML="led on";
-//	message = new Paho.MQTT.Message("ENCENDER");
-//        message.destinationName = "maribel.agudelo@unach.edu.ec/tema2";
-//	client.send(message);
-//	contador=1;
-//        } 
-//        else
-//	{
-//	message = new Paho.MQTT.Message("APAGADO");
-//        message.destinationName = "maribel.agudelo@unach.edu.ec/tema2";
-//        client.send(message);
-//	contador=0
-//	}
-//}
+	document.getElementById("sensor").innerHTML="led on";
+	message = new Paho.MQTT.Message("ENCENDER");
+        message.destinationName = "maribel.agudelo@unach.edu.ec/tema2";
+	client.send(message);
+	contador=1;
+        } 
+        else
+	{
+	message = new Paho.MQTT.Message("APAGADO");
+        message.destinationName = "maribel.agudelo@unach.edu.ec/tema2";
+        client.send(message);
+	contador=0
+	}
+}
 
 
 
