@@ -1,7 +1,5 @@
 //https://www.eclipse.org/paho/clients/js/
 
-//https://www.eclipse.org/paho/clients/js/
-
 function LED1_On() {
 	//alert("led on");
 	console.log("led on");
@@ -49,7 +47,7 @@ function LED1_Off(){
     // Once a connection has been made, make a subscription and send a message.
     console.log("Conectado....");
 	
-    client.subscribe("brayan.rivera@unach.edu.ec/tema1");
+    client.subscribe("maribel.agudelo@unach.edu.ec/tema1");
     message = new Paho.MQTT.Message("hola desde la web");
     message.destinationName = "maribel.agudelo@unach.edu.ec/tema2";
     client.send(message);
@@ -76,93 +74,3 @@ function LED1_Off(){
   }
 
 
-
-
-//var btn=document.getElementById('btn'), contador=0;
-//function Boton() {
-	
-//	if (contador==0)
-//	{
-//	//alert("led on");
-	//console.log("ENCENDIDO");
-//	document.getElementById("sensor").innerHTML="BOTON";
-//	message = new Paho.MQTT.Message("VALORES");
-//       message.destinationName = "maribel.agudelo@unach.edu.ec/tema1";
-//	client.send(message);
-//	contador=1;
-//        } 
-//        else
-//	{
-//	message = new Paho.MQTT.Message("APAGADO");
-//        message.destinationName = "maribel.agudelo@unach.edu.ec/tema2";
-//        client.send(message);
-//	contador=0
-//	}
-//}
-
-//BOTON ENCENCIDO Y APAGADO CON UN SOLO BOTON 
-//var btn=document.getElementById('btn'), contador=0;
-//function PRENDIDO() {
-	
-	//if (contador==0)
-	{
-	//alert("led on");
-	//console.log("ENCENDIDO");
-	//document.getElementById("sensor").innerHTML="led on";
-	//message = new Paho.MQTT.Message("ENCENDER");
-        //message.destinationName = "maribel.agudelo@unach.edu.ec/tema2";
-	//client.send(message);
-	//contador=1;
-        //} 
-        //else
-	//{
-	//message = new Paho.MQTT.Message("APAGADO");
-        //message.destinationName = "maribel.agudelo@unach.edu.ec/tema2";
-        //client.send(message);
-	//contador=0
-	//}
-//}
-
-
-
-//function
-//function LED1_Off(){	
-	//alert("led off");
-	//console.log("led off");
-	//document.getElementById("sensor").innerHTML="led off";
-        //message = new Paho.MQTT.Message("OFF");
-        //message.destinationName = "maribel.agudelo@unach.edu.ec/tema2";
-        //client.send(message);
-//}
-
-
-// Create a client instance
-  //client = new Paho.MQTT.Client("postman.cloudmqtt.com", 14970);
-  
-  //client = new Paho.MQTT.Client("maqiatto.com", 8883, "web_" + parseInt(Math.random() * 100, 10));
-
-  // set callback handlers
-  //client.onConnectionLost = onConnectionLost;
-  //client.onMessageArrived = onMessageArrived;
-  //var options = {
-   //useSSL: false,
-    //userName: "maribel.agudelo@unach.edu.ec",
-  //  password: "Saltarina1907981",
-   // onSuccess:onConnect,
-  //  onFailure:doFail
- // }
-
-  // connect the client
- // client.connect(options);
-   
-  // called when the client connects
-  //function onConnect() {
-    // Once a connection has been made, make a subscription and send a message.
-    //console.log("Conectado...");
-	
-   // client.subscribe("maribel.agudelo@unach.edu.ec/tema1");
-   // message = new Paho.MQTT.Message("hola desde la web");
-    //message.destinationName = "maribel.agudelo@unach.edu.ec/tema2";
-    //client.send(message);
-	
- 
