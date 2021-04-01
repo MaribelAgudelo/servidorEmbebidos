@@ -1,61 +1,28 @@
 //https://www.eclipse.org/paho/clients/js/
 
-var btn=document.getElementById('btn'), contador=0;
-//function Boton() {
-	
-//	if (contador==0)
-//	{
-//	//alert("led on");
-	//console.log("ENCENDIDO");
-//	document.getElementById("sensor").innerHTML="BOTON";
-//	message = new Paho.MQTT.Message("VALORES");
-//       message.destinationName = "maribel.agudelo@unach.edu.ec/tema1";
-//	client.send(message);
-//	contador=1;
-//        } 
-//        else
-//	{
-//	message = new Paho.MQTT.Message("APAGADO");
-//        message.destinationName = "maribel.agudelo@unach.edu.ec/tema2";
-//        client.send(message);
-//	contador=0
-//	}
-//}
+//https://www.eclipse.org/paho/clients/js/
 
-//BOTON ENCENCIDO Y APAGADO CON UN SOLO BOTON 
-//var btn=document.getElementById('btn'), contador=0;
-function PRENDIDO() {
-	
-	if (contador==0)
-	{
+function LED1_On() {
 	//alert("led on");
-	//console.log("ENCENDIDO");
-	document.getElementById("sensor").innerHTML="led on";
-	message = new Paho.MQTT.Message("ENCENDER");
-        message.destinationName = "maribel.agudelo@unach.edu.ec/tema2";
-	client.send(message);
-	contador=1;
-        } 
-        else
-	{
-	message = new Paho.MQTT.Message("APAGADO");
-        message.destinationName = "maribel.agudelo@unach.edu.ec/tema2";
-        client.send(message);
-	contador=0
-	}
+	console.log("led on");
+	message = new Paho.MQTT.Message("ON");
+    	message.destinationName = "maribel.agudelo@unach.edu.ec/tema1";
+    	client.send(message);
+	//document.getElementById("sensor").innerHTML="led on";
+  
+}
+function LED1_Off(){	
+	//alert("led off");
+	console.log("led off");
+	message = new Paho.MQTT.Message("OFF");
+    	message.destinationName = "maribel.agudelo@unach.edu.ec/tema1";
+    	client.send(message);
+	//document.getElementById("sensor").innerHTML="led off";
 }
 
 
 
-//function
-//function LED1_Off(){	
-	//alert("led off");
-	//console.log("led off");
-	//document.getElementById("sensor").innerHTML="led off";
-        //message = new Paho.MQTT.Message("OFF");
-        //message.destinationName = "maribel.agudelo@unach.edu.ec/tema2";
-        //client.send(message);
-//}
+
 
 
 // Create a client instance
@@ -80,9 +47,9 @@ function PRENDIDO() {
   // called when the client connects
   function onConnect() {
     // Once a connection has been made, make a subscription and send a message.
-    console.log("Conectado...");
+    console.log("Conectado....");
 	
-    client.subscribe("maribel.agudelo@unach.edu.ec/tema1");
+    client.subscribe("brayan.rivera@unach.edu.ec/tema1");
     message = new Paho.MQTT.Message("hola desde la web");
     message.destinationName = "maribel.agudelo@unach.edu.ec/tema2";
     client.send(message);
@@ -97,13 +64,105 @@ function PRENDIDO() {
   // called when the client loses its connection
   function onConnectionLost(responseObject) {
     if (responseObject.errorCode !== 0) {
-      console.log("conexion_perdida:"+responseObject.errorMessage);
+      console.log("onConnectionLost:"+responseObject.errorMessage);
     }
   }
 
   // called when a message arrives
   function onMessageArrived(message) {
     console.log("onMessageArrived:"+message.payloadString);
-	  document.getElementById("sensor").innerHTML= message.payloadString;
+	  //document.getElementById("sensor").innerHTML="LISTO";
+	  document.getElementById("sensor").innerHTML=message.payloadString;
   }
+
+
+
+
+//var btn=document.getElementById('btn'), contador=0;
+//function Boton() {
+	
+//	if (contador==0)
+//	{
+//	//alert("led on");
+	//console.log("ENCENDIDO");
+//	document.getElementById("sensor").innerHTML="BOTON";
+//	message = new Paho.MQTT.Message("VALORES");
+//       message.destinationName = "maribel.agudelo@unach.edu.ec/tema1";
+//	client.send(message);
+//	contador=1;
+//        } 
+//        else
+//	{
+//	message = new Paho.MQTT.Message("APAGADO");
+//        message.destinationName = "maribel.agudelo@unach.edu.ec/tema2";
+//        client.send(message);
+//	contador=0
+//	}
+//}
+
+//BOTON ENCENCIDO Y APAGADO CON UN SOLO BOTON 
+//var btn=document.getElementById('btn'), contador=0;
+//function PRENDIDO() {
+	
+	//if (contador==0)
+	{
+	//alert("led on");
+	//console.log("ENCENDIDO");
+	//document.getElementById("sensor").innerHTML="led on";
+	//message = new Paho.MQTT.Message("ENCENDER");
+        //message.destinationName = "maribel.agudelo@unach.edu.ec/tema2";
+	//client.send(message);
+	//contador=1;
+        //} 
+        //else
+	//{
+	//message = new Paho.MQTT.Message("APAGADO");
+        //message.destinationName = "maribel.agudelo@unach.edu.ec/tema2";
+        //client.send(message);
+	//contador=0
+	//}
+//}
+
+
+
+//function
+//function LED1_Off(){	
+	//alert("led off");
+	//console.log("led off");
+	//document.getElementById("sensor").innerHTML="led off";
+        //message = new Paho.MQTT.Message("OFF");
+        //message.destinationName = "maribel.agudelo@unach.edu.ec/tema2";
+        //client.send(message);
+//}
+
+
+// Create a client instance
+  //client = new Paho.MQTT.Client("postman.cloudmqtt.com", 14970);
   
+  //client = new Paho.MQTT.Client("maqiatto.com", 8883, "web_" + parseInt(Math.random() * 100, 10));
+
+  // set callback handlers
+  //client.onConnectionLost = onConnectionLost;
+  //client.onMessageArrived = onMessageArrived;
+  //var options = {
+   //useSSL: false,
+    //userName: "maribel.agudelo@unach.edu.ec",
+  //  password: "Saltarina1907981",
+   // onSuccess:onConnect,
+  //  onFailure:doFail
+ // }
+
+  // connect the client
+ // client.connect(options);
+   
+  // called when the client connects
+  //function onConnect() {
+    // Once a connection has been made, make a subscription and send a message.
+    //console.log("Conectado...");
+	
+   // client.subscribe("maribel.agudelo@unach.edu.ec/tema1");
+   // message = new Paho.MQTT.Message("hola desde la web");
+    //message.destinationName = "maribel.agudelo@unach.edu.ec/tema2";
+    //client.send(message);
+	
+ 
