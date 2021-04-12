@@ -12,7 +12,7 @@ function LED1_On() {
   
 }
 function LED1_Off(){	
-	alert("led off");
+	//alert("led off");
 	console.log("led off");
 	message = new Paho.MQTT.Message("OFF");
     	message.destinationName = "maribel.agudelo@unach.edu.ec/tema1";
