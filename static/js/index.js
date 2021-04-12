@@ -1,4 +1,5 @@
 //https://www.eclipse.org/paho/clients/js/
+//PRENDER Y APAGAR EL LED CON UN MISMO BOTON
 
 function LED1_On() {
 	//alert("led on");
@@ -11,14 +12,29 @@ function LED1_On() {
 	//document.getElementById("sensor").innerHTML="led on";
   
 }
-function LED1_Off(){	
+
+
+
+//PRENDER Y APAGAR EL LED CON DOS BOTONES
+//function LED1_On() {
+	//alert("led on");
+	//console.log("led on");
+	//message = new Paho.MQTT.Message("ON");
+    	//message.destinationName = "maribel.agudelo@unach.edu.ec/tema1";
+	//message = new Paho.MQTT.Message("OFF");
+	//message.destinationName = "maribel.agudelo@unach.edu.ec/tema1";
+    	//client.send(message);
+	//document.getElementById("sensor").innerHTML="led on";
+  
+//}
+//function LED1_Off(){	
 	//alert("led off");
-	console.log("led off");
-	message = new Paho.MQTT.Message("OFF");
-    	message.destinationName = "maribel.agudelo@unach.edu.ec/tema1";
-    	client.send(message);
-	document.getElementById("sensor").innerHTML="led off";
-}
+	//console.log("led off");
+	//message = new Paho.MQTT.Message("OFF");
+    	//message.destinationName = "maribel.agudelo@unach.edu.ec/tema1";
+    	//client.send(message);
+	//document.getElementById("sensor").innerHTML="led off";
+//}
 
 
 
