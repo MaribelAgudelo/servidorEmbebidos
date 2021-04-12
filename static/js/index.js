@@ -5,20 +5,20 @@ function LED1_On() {
 	console.log("led on");
 	message = new Paho.MQTT.Message("ON");
     	message.destinationName = "maribel.agudelo@unach.edu.ec/tema1";
-	message = new Paho.MQTT.Message("OFF");
-	message.destinationName = "maribel.agudelo@unach.edu.ec/tema1";
+	//message = new Paho.MQTT.Message("OFF");
+	//message.destinationName = "maribel.agudelo@unach.edu.ec/tema1";
     	client.send(message);
 	//document.getElementById("sensor").innerHTML="led on";
   
 }
-//function LED1_Off(){	
-	//alert("led off");
-	//console.log("led off");
-	//message = new Paho.MQTT.Message("OFF");
-    	//message.destinationName = "maribel.agudelo@unach.edu.ec/tema1";
-    	//client.send(message);
-	//document.getElementById("sensor").innerHTML="led off";
-//}
+function LED1_Off(){	
+	alert("led off");
+	console.log("led off");
+	message = new Paho.MQTT.Message("OFF");
+    	message.destinationName = "maribel.agudelo@unach.edu.ec/tema1";
+    	client.send(message);
+	document.getElementById("sensor").innerHTML="led off";
+}
 
 
 
